@@ -1,4 +1,4 @@
-package br.com.example.hexagon_example.domain.port.in.product;
+package br.com.example.hexagon_example.application.port.in.product;
 
 public interface DeleteProductUseCase {
 

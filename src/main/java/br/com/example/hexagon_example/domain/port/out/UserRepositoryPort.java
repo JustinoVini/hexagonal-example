@@ -15,6 +15,8 @@ public interface UserRepositoryPort {
 
     boolean existsById(Long id);
 
+    Optional<User> findByLogin(String login);
+
     boolean existsByLogin(String login);
 
     void deleteById(Long id);

@@ -1,4 +1,4 @@
-package br.com.example.hexagon_example.domain.port.in.user;
+package br.com.example.hexagon_example.application.port.in.user;
 
 import br.com.example.hexagon_example.domain.model.User;
 

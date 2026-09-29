@@ -6,6 +6,13 @@ spring:
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: HexagonHikariPool
+      minimum-idle: ${DB_POOL_MIN_IDLE:2}
+      maximum-pool-size: ${DB_POOL_MAX_SIZE:10}
+      connection-timeout: ${DB_CONNECTION_TIMEOUT:30s}
+      idle-timeout: ${DB_IDLE_TIMEOUT:10m}
+      max-lifetime: ${DB_MAX_LIFETIME:30m}
   jpa:
     hibernate:
       ddl-auto: validate
@@ -13,3 +20,13 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+
+jwt:
+  secret: ${JWT_SECRET:2d4e18975479dfaf9cfffaecb4e95c999a65e02a71dc6d7d7b37e8f33f94545d}
+  expiration: ${JWT_EXPIRATION:1h}
+
+app:
+  admin:
+    login: ${ADMIN_LOGIN:admin}
+    name: ${ADMIN_NAME:Administrator}
+    password: ${ADMIN_PASSWORD}
